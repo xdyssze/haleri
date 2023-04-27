@@ -5,19 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Häleri.se</title>
         <link rel="stylesheet" href="css/style.css">
+        
         <script src="js/main.js"></script>
+        <script src="js/ui.js"></script>
+        
     </head>
     <body>
         <div id="top-bar">
             <h1 id="title">Häleri.se</h1>
-            <img id="kundvagn" src="img/shopping-cart.svg" alt="shjopping">
-           
-        </div>
-        <div id="sidebar">
+            <img id="kundvagn" src="img/shopping-cart.svg" alt="shjopping" onclick="expandCart()">
+            <img id="menu-button" src="img/menu.svg" alt="menu" onclick="expandNav()">
+            <div id="varor">
 
+            </div>
         </div>
-        <div id="main">
-
+        <div id="container-row">
+            <div id="sidebar" >
+                <ul id="cat">
+    
+                </ul>
+                <div id="bottom-white">
+                    <a href="about.html" title="Om oss" class="link">Om oss</a>
+                    <a href="contact.html" title="Kontakta Oss" class="link">Kontakta oss</a>
+                </div>
+            </div>
+            <div id="main">
+    
+            </div>
         </div>
+       
     </body>
 </html>

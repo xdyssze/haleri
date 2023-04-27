@@ -2,6 +2,16 @@
 
 
 /** top bar grejs **/
+
+#container-row {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 0px;
+    margin-top: 9vh;
+    width: 100vw;
+    height: 90vh;
+}
 #top-bar {
     position: absolute;
     width: 100%;
@@ -11,35 +21,124 @@
     top: 0px;
 }
 #title {
-    font-family: 'Inter';
+font-family: 'Inter';
 font-style: normal;
 font-weight: 200;
 font-size: 32px;
 line-height: 39px;
-text-align: center;
-
+margin-left: 3vw;
 color: #000000;
 }
+#sidebar {
+    background: linear-gradient(177.87deg, #A8FFBB 46.14%, rgba(189, 213, 242, 0) 84.07%);
+    width:20vw;
+    height: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+    display: inline-block;
+    transition: 0.5s;
+    top: 10vh;
+    left: 0px;
+}
+#menu-button {
+    display: none;
+}
+
 #kundvagn {
     width: 10vh;
     height: 10vh;
-    
     position: absolute;
     top: 0px;
     left:auto;
     right: 20px;
 }
+
+#kundvagn:hover{
+    top: 0.5vh;
+    right: calc(20px + 0.5vh);
+    width: 9vh;
+    height: 9vh;
+    opacity: 0.7;
+}
+
+/** main området med föremål från shoppen **/
+
 #main {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+
+/** FÖREMÅL **/
+
+.item {
+    border: rgba(183, 244, 196, 0.697917) solid 3px;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}
+
+
+/** funktionalitetsklasser **/
+
+.selected {
+    top: 1.5vh;
+        left: 1.5vw;
+        width: 7vh;
+        height: 7vh;
+        opacity: 0.7;
 }
 
 
 /** RWD **/
 
+/** Gemensamt för olika enheter **/
+@media screen and (max-width: 900px) {
 
+    #menu-button {
+        width: 8vh;
+        height: 8vh;
+        display:initial;
+        position: absolute;
+        top: 1vh;
+        left:1vw;
+        right: auto;
+    }
+    #menu-button:hover {
+        top: 1.5vh;
+        left: 1.5vw;
+        width: 7vh;
+        height: 7vh;
+        opacity: 0.7;
+    }
+
+    
+    #sidebar {
+        height: 0%;
+        width: 50%;
+        position: fixed;
+    }
+    #title {
+        text-align: center;
+    }
+    .hidden {
+        display: none;
+    }
+}
+
+/** IPAD **/
 @media screen and (min-width: 600px) and (max-width: 900px) {
     
+    
 }
+
+/** MOBIL **/
 @media screen and (max-width: 600px) {
+
 
 }
