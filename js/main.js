@@ -5,16 +5,19 @@
 
 
 
-async function testFetch() {
-    console.log("prov");
-    var res = await fetch("https://halerinodejs.roeappelqvist1.repl.co/get", {
-        method: 'GET'
-    });
-    var jsond = await res.json();
-    console.log(jsond);
-}
+
 function expandCart() {
-    testFetch();
+    fetch("https://halerinodejs.roeappelqvist1.repl.co/get")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        let item = data;
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 }
 // jag vet johan, jag kan säkert bara använda arrays / jsonObjekt för detta men jag gillar att komplicera saker, om du inte redan har märkt det :)
 
