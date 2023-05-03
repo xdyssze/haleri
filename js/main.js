@@ -7,9 +7,8 @@
 
 async function testFetch() {
     console.log("prov");
-    var res = await fetch("http://127.0.0.1:3600/get", {
-        method: 'GET',
-        
+    var res = await fetch("https://halerinodejs.roeappelqvist1.repl.co/get", {
+        method: 'GET'
     });
     var jsond = await res.json();
     console.log(jsond);
