@@ -7,12 +7,20 @@
 
 
 function expandCart() {
-    fetch("https://halerinodejs.roeappelqvist1.repl.co/get")
+    fetch("https://halerinodejs.roeappelqvist1.repl.co/get", {
+        Method: 'GET',
+        Headers: {
+          Accept: 'application.json',
+           'Content-Type': 'application/json'
+        },
+        Body: body,
+        Cache: 'default'
+    })
     .then((response) => {
-        return response.json();
+        console.log(response);
     })
     .then((data) => {
-        let item = data;
+
         console.log(data);
     })
     .catch(error => {
