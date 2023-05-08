@@ -109,8 +109,55 @@ border: black solid 1px;
    height: 300px;;
 }
 
+/** INFRAME **/
 
-/** funktionalitetsklasser **/
+.Inframe {
+    height: 100%;
+    width: 100%;
+    border: black solid 1px;
+    display: flex;
+    flex-direction: column;
+}
+.Inframediv1 {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom:5%;
+}
+.Inframediv2 {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.Inframedesc {
+font-size:30px;
+}
+
+.Inframename {
+font-size: 30px;
+}
+
+.Inframeback {
+    height: 10%;
+    width: 10%;
+}
+.Inframeimg {
+    height:100%;
+
+}
+.Inframeprice {
+font-size: 20px;
+
+}
+
+.Inframepurchase {
+    height: 50px;
+    width: 100px;
+}
+ /** funktionalitetsklasser **/
 
 .selected {
     top: 1.5vh;
