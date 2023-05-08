@@ -31,8 +31,7 @@ Page.generateContent = function() {
     img.alt = ("Image of " + Page.Items[i].name);
     img.className = "imgBox";
     img.id = i;
-    img.onclick = function() { alert(this);
-        Page.createItemWindow(this.id); };
+    img.onclick = function() { Page.createItemWindow(this.id); };
     //price
     price.innerHTML = (Page.Items[i].price + "kr");
     price.className = "price";
@@ -89,7 +88,7 @@ Page.createItemWindow = function(id) {
     backbtn.src = "../img/back-button.svg";
     backbtn.alt = "backbutton";
     //pric
-    pric.innerHTML = Page.Items[id].price;
+    pric.innerHTML = Page.Items[id].price + "kr";
     //name
     name = Page.Items[id].name;
     //classnames
@@ -117,12 +116,43 @@ Page.createItemWindow = function(id) {
     document.querySelector("#main").append(mainf);
 }
 
+
+
+//Cart draw inframe screen
+
+Page.createCartWindow = function() {
+    Page.clearItemFrame();
+    var mainf = document.createElement("div");
+    var list = document.createElement("ul");
+    var tot = document.createElement("p");
+    var totalcost = 0;
+    for(let i = 0; i < Cart.Items.length; i++) {
+        var ob = document.createElement("li");
+        ob.textContent = "Vara: " + Cart.Items[i].name + " || Pris: " + Cart.Items[i].price + "kr";
+        totalcost += parseInt(Cart.Items[i].price);
+        ob.id = Cart.Items[i].id;
+        ob.className = "Liobj";
+        ob.onclick = function() {
+            Cart.removeFromCart(this.id);
+        }
+        list.append(ob);
+    }
+    
+    tot.innerHTML = "Total Kostnad: " + totalcost + "kr";
+    tot.className = "total";
+    mainf.append(list);
+    mainf.append(tot);
+
+    document.querySelector("#main").append(mainf);
+}
+
+// cart functions
 Cart.addToCart = function(id) {
     let it = Page.Items[id];
     it.id = id;
     console.log(it);
     Cart.Items[Cart.Items.length] = it;
-    console.log(Cart.Items[Cart.Items.length]);
+    console.log(Cart.Items[Cart.Items.length-1]);
     Cart.sorts();
 }
 Cart.findElement = function(id) {
@@ -135,19 +165,22 @@ Cart.findElement = function(id) {
 }
 
 Cart.removeFromCart = function(id) {
-    Cart.Items[Cart.findElement(id)] = {};
-    Cart.sorts();
     
+    Cart.Items[Cart.findElement(id)] = "2sex";
+    Cart.sorts();
+    Page.createCartWindow();
 }
 Cart.sorts = function() {
     let temparr = [];
     let count = 0;
-    for(it in Cart.Items) {
-        if(it != {}) {
-            temparr[count] = it;
+    for(let i = 0; i < Cart.Items.length; i++) {
+        if(Cart.Items[i] != "2sex") {
+            console.log(Cart.Items[i]);
+            temparr[count] = Cart.Items[i];
             count++;
         }
     }
+    console.log(temparr);
     Cart.Items = temparr;
     Cart.updateLocalStorage();
 }
@@ -167,6 +200,7 @@ Cart.updateLocalStorage = function() {
 function debug() {
     sex();
 }
-function expandCart() {
-
+Cart.expandCart = function() {
+    console.log("sex");
+    Page.createCartWindow();
 }

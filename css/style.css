@@ -152,7 +152,13 @@ font-size: 30px;
 font-size: 20px;
 
 }
+.Liobj {
+    margin: 20px;
+    font-size: 20px;
+    border: black solid 1px;
 
+
+}
 .Inframepurchase {
     height: 50px;
     width: 100px;
