@@ -13,7 +13,7 @@ window.addEventListener("load", (event) => {
 
 
 async function getItems() {
-    const response = await fetch("https://halerinodejs.roeappelqvist1.repl.co/get");
+    const response = await fetch("https://5877de4a-acb2-4d59-8cfd-e6379d9f3bc6-00-10qravryh231u.kirk.replit.dev/get");
     const jsonData = await response.json();
     return jsonData;
 }
@@ -27,7 +27,7 @@ Page.generateContent = function() {
     var name = document.createElement("p");
     var img = document.createElement("img");
     //image
-    img.src = ("https://halerinodejs.roeappelqvist1.repl.co/img/" + Page.Items[i].imgid);
+    img.src = ("https://5877de4a-acb2-4d59-8cfd-e6379d9f3bc6-00-10qravryh231u.kirk.replit.dev/img/" + Page.Items[i].imgid);
     img.alt = ("Image of " + Page.Items[i].name);
     img.className = "imgBox";
     img.id = i;
@@ -69,7 +69,7 @@ Page.createItemWindow = function(id) {
     var div1 = document.createElement("div");
     var div2 = document.createElement("div");
     //img
-    img.src = ("https://halerinodejs.roeappelqvist1.repl.co/img/" + Page.Items[id].imgid);
+    img.src = ("https://5877de4a-acb2-4d59-8cfd-e6379d9f3bc6-00-10qravryh231u.kirk.replit.dev/img/" + Page.Items[id].imgid);
     img.alt = ("Image of " + Page.Items[id].name);
     //purchaseknapp
     purchaseButton.onclick = function() {

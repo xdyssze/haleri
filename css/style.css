@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
 /** top bar grejs **/
 
@@ -21,11 +21,11 @@
     top: 0px;
 }
 #title {
-font-family: 'Inter';
+font-family: 'Open Sans', sans-serif;
 font-style: normal;
 font-weight: 200;
-font-size: 32px;
-line-height: 39px;
+font-size: 3vw;
+line-height: 4vh;
 margin-left: 3vw;
 color: #000000;
 }
@@ -50,12 +50,12 @@ color: #000000;
     position: absolute;
     top: 0px;
     left:auto;
-    right: 20px;
+    right: 1vw;
 }
 
 #kundvagn:hover{
     top: 0.5vh;
-    right: calc(20px + 0.5vh);
+    right: calc(1vw + 0.5vh);
     width: 9vh;
     height: 9vh;
     opacity: 0.7;
@@ -118,27 +118,24 @@ border: black solid 1px;
     display: flex;
     flex-direction: column;
 }
-.Inframediv1 {
-    height: 40%;
-    width: 100%;
+.Inframe>div {
     display: flex;
+    width: 100%;
+    margin-bottom:5%;
+}å
+.Inframediv1 {
+    height: 40%;   
     align-items: center;
     flex-direction: column;
-    margin-bottom:5%;
 }
 .Inframediv2 {
     height: 45%;
-    width: 100%;
-    display: flex;
     flex-direction: row;
 }
-.Inframedesc {
-font-size:30px;
+.Inframe>div>p {
+    font-size: 30px;
 }
 
-.Inframename {
-font-size: 30px;
-}
 
 .Inframeback {
     height: 10%;
@@ -148,13 +145,10 @@ font-size: 30px;
     height:100%;
 
 }
-.Inframeprice {
-font-size: 20px;
 
-}
 .Liobj {
     margin: 20px;
-    font-size: 20px;
+    font-size: 3vw;
     border: black solid 1px;
 
 
@@ -213,11 +207,44 @@ font-size: 20px;
 /** IPAD **/
 @media screen and (min-width: 600px) and (max-width: 900px) {
     
+    .Inframe>div>p {
+        font-size: 2vh;
+    }
+    .Liobj {
+        margin: 20px;
+        font-size: 3vw;
+        border: black solid 1px;
     
+    
+    }
 }
 
 /** MOBIL **/
 @media screen and (max-width: 600px) {
-
+    #title {
+        font-size: 30px;
+    }
+    .Inframeprice {
+        font-size: 7vw;
+    }
+    .Inframe>div>p {
+        font-size: 4vw;
+    }
+    .Liobj {
+        margin: 20px;
+        font-size: 5vw;
+        border: black solid 1px;
+    
+    
+    }
+    
+    .Inframediv1 {
+        height: 50%;   
+        
+    }
+    .Inframediv2 {
+        height: 35%;   
+        
+    }
 
 }
